@@ -29,6 +29,8 @@ body{
     color:#fff;
     font-family: 'Open Sans',arial, sans-serif;
     font-size: 22px;
+    transition: filter 0.5s;
+    filter: blur(5px);
 
 
 }
