@@ -20,14 +20,15 @@
     src: url(../fonts/OpenSans-Bold.woff2) format('woff2'),
          url(../fonts/OpenSans-Bold.woff) format('woff');
     font-weight: 700;
-
+}
 body{
     width: 100%;
     height: 100vh;
-    margin: 0;
-    background-image: radial-gradient(circle,#1c7fc2 0%,#009cdc 28%,#0d9ade 32,#011844 100%);
+    margin: 30px 30px;
+    background-image: radial-gradient(circle,#1c7fc2 0%,#009cdc 28%,#0d9ade 32%,#011844 100%);
     color:#fff;
     font-family: 'Open Sans',arial, sans-serif;
+    font-weight: 300;
     font-size: 22px;
     transition: filter 0.5s;
     filter: blur();
@@ -37,81 +38,92 @@ body{
 .weather{
     width: 80%;
     height: 100%;
-    display: flex;
+    display: flex; 
+    justify-items: space-between;
     margin: 0 auto;
+    margin-left: 100px;
     padding: 20px 0;
     box-sizing: border-box;
-}
+    white-space:nowrap; } 
+
 .weather_search{
-    width: 100%;
-    height: 40px;
-    padding: 10px 20px;
+    width: 80%;
+    padding: 15px 10px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.15);
+     background-color: rgba(255, 255, 255, 0.2);
     font-size: 20px;
     color:inherit;
+    margin-bottom: 100px; 
+    border-radius: 10px;
 }
 .weather_search::placeholder{
     color: #fff;
 }
-.weather__today{
+.weather_today{
     display:flex;
-    flex-wrap: wrap;;
+    flex-wrap: wrap; 
     justify-content:space-between;
 
 }
-.weather__image{
-    width: 30vhmin;
+.weather_image{
+    width: 40vmin;
     align-self: center;
 
 }
-.weather__city{
+.weather_city{
     font-size: 36px;
     font-weight: 600;
     margin: 20px 0;
 }
-.weather__Day{
+.weather_Day{
     font-size: 20px;
     margin: 10px 0;
 }
-.weather__indicator::before{
+.weather_indicator::before{
     content:'';
     display: inline-block;
     vertical-align: middle;
     width: 30px;
     height: 30px;
     background-size: cover;
+    margin-right: 10px;
 }
-.weather__indicator--humidity::before{
-    background-image: url(../images/humidity.png);
+  .weather_indicator--humidity::before{
+    background-image:url(images/humidity.png);
 }
-.weather__indicator--wind::before{
-    background-image: url(../images/wind.png);
+.weather_indicator--wind::before{
+    background-image: url(images/wind.png);
 }
-.weather__indicator--pressure::before{
-    background-image: url(../images/pressure.png);
+.weather_indicator--pressure::before{
+    background-image: url(images/pressure.png);
 }
-.weather__tempearture{
+.weather_tempearture{
     font-size: 60px;
 }
-.weather__forcast{
+.weather_forcast{
     width: 100%;
+    text-align: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
 }
-.weather__forcast-icon{
-    max-width: 50%;
+.weather_forcast_icon{
+    max-width:50%;
+    
 }
-.weather__forcast-item{
-    background-color: rgba(255, 255, 255, 0.2);
+.weather_forcast_item{
+    background-color: rgba(173, 14, 14, 0.2);
     border-radius: 10px;
     margin: 0 10px 10px ;
     padding: 30px 5px 20px;
     box-sizing: border-box;
     min-width: 150px;
-    width: calc( 20% - 20px);
+    width: 20% ;
     flex-grow: 1;
 
     }
+    .weather_forcast-icon{
+    max-width: 50%;
+}
 
