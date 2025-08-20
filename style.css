@@ -20,7 +20,7 @@
     src: url(../fonts/OpenSans-Bold.woff2) format('woff2'),
          url(../fonts/OpenSans-Bold.woff) format('woff');
     font-weight: 700;
-}
+
 body{
     width: 100%;
     height: 100vh;
@@ -30,7 +30,7 @@ body{
     font-family: 'Open Sans',arial, sans-serif;
     font-size: 22px;
     transition: filter 0.5s;
-    filter: blur(5px);
+    filter: blur();
 
 
 }
@@ -44,7 +44,8 @@ body{
 }
 .weather_search{
     width: 100%;
-    padding:15px 10px;
+    height: 40px;
+    padding: 10px 20px;
     border: none;
     background-color: rgba(255, 255, 255, 0.15);
     font-size: 20px;
