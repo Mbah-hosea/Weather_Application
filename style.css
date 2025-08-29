@@ -1,129 +1,254 @@
-@font-face{
+/* ------------------------
+   Fonts
+------------------------ */
+@font-face {
     font-family: 'Open Sans';
-    src: url(../fonts/OpenSans.woff2) format('woff2'),
-         url(../fonts/OpenSans.woff) format('woff');
+    src: url(./fonts/OpenSans.woff2) format('woff2'),
+        url(./fonts/OpenSans.woff) format('woff');
 }
-@font-face{
+@font-face {
     font-family: 'Open Sans';
-    src: url(../fonts/OpenSans-Light.woff2) format('woff2'),
-         url(../fonts/OpenSans-Light.woff) format('woff');
-   font-weight: 300;
+    src: url(./fonts/OpenSans-Light.woff2) format('woff2'),
+        url(./fonts/OpenSans-Light.woff) format('woff');
+    font-weight: 300;
 }
-@font-face{
+@font-face {
     font-family: 'Open Sans';
-    src: url(../fonts/OpenSans-semibold.woff2) format('woff2'),
-         url(../fonts/OpenSans-semibold.woff) format('woff');
+    src: url(./fonts/OpenSans-semibold.woff2) format('woff2'),
+        url(./fonts/OpenSans-semibold.woff) format('woff');
     font-weight: 600;
 }
-@font-face{
+@font-face {
     font-family: 'Open Sans';
-    src: url(../fonts/OpenSans-Bold.woff2) format('woff2'),
-         url(../fonts/OpenSans-Bold.woff) format('woff');
+    src: url(./fonts/OpenSans-Bold.woff2) format('woff2'),
+        url(./fonts/OpenSans-Bold.woff) format('woff');
     font-weight: 700;
 }
-body{
-    width: 100%;
-    height: 100vh;
-    margin: 30px 30px;
-    background-image: radial-gradient(circle,#1c7fc2 0%,#009cdc 28%,#0d9ade 32%,#011844 100%);
-    color:#fff;
-    font-family: 'Open Sans',arial, sans-serif;
+
+/* ------------------------
+   Body
+------------------------ */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Open Sans', Arial, sans-serif;
     font-weight: 300;
     font-size: 22px;
-    transition: filter 0.5s;
-    filter: blur();
-
-
-}
-.weather{
-    width: 80%;
-    height: 100%;
-    display: flex; 
-    justify-items: space-between;
-    margin: 0 auto;
-    margin-left: 100px;
-    padding: 20px 0;
+    color: #fff;
+    background: radial-gradient(circle, #1c7fc2 0%, #009cdc 28%, #0d9ade 32%, #011844 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
     box-sizing: border-box;
-    white-space:nowrap; } 
+}
 
-.weather_search{
-    width: 80%;
+/* ------------------------
+   Weather container
+------------------------ */
+#weather {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* ------------------------
+   Search box
+------------------------ */
+.weather_search {
+    width: 100%;
     padding: 15px 10px;
     border: none;
-     background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
     font-size: 20px;
-    color:inherit;
-    margin-bottom: 100px; 
     border-radius: 10px;
+    margin-bottom: 30px;
 }
-.weather_search::placeholder{
+.weather_search::placeholder {
     color: #fff;
 }
-.weather_today{
-    display:flex;
-    flex-wrap: wrap; 
-    justify-content:space-between;
 
-}
-.weather_image{
-    width: 40vmin;
-    align-self: center;
-
-}
-.weather_city{
-    font-size: 36px;
-    font-weight: 600;
-    margin: 20px 0;
-}
-.weather_Day{
-    font-size: 20px;
-    margin: 10px 0;
-}
-.weather_indicator::before{
-    content:'';
-    display: inline-block;
-    vertical-align: middle;
-    width: 30px;
-    height: 30px;
-    background-size: cover;
-    margin-right: 10px;
-}
-  .weather_indicator--humidity::before{
-    background-image:url(images/humidity.png);
-}
-.weather_indicator--wind::before{
-    background-image: url(images/wind.png);
-}
-.weather_indicator--pressure::before{
-    background-image: url(images/pressure.png);
-}
-.weather_tempearture{
-    font-size: 60px;
-}
-.weather_forcast{
-    width: 100%;
-    text-align: center;
+/* ------------------------
+   Current weather
+------------------------ */
+.weather_today {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
 
+.weather_details {
+    flex: 1 1 300px;
 }
-.weather_forcast_icon{
-    max-width:50%;
-    
+
+.weather_city {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 10px 0;
 }
-.weather_forcast_item{
+
+.weather_day {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.weather_indicator {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.weather_indicator::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+.weather_indicator--humidity::before {
+    background-image: url('images/humidity.png');
+}
+
+.weather_indicator--wind::before {
+    background-image: url('images/wind.png');
+}
+
+.weather_indicator--pressure::before {
+    background-image: url('images/pressure.png');
+}
+
+.weather_temparature {
+    font-size: 60px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.weather_image {
+    width: 40vmin;
+    max-width: 200px;
+    margin: 10px;
+}
+
+/* ------------------------
+   5-day forecast
+------------------------ */
+.weather_forcast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.weather_forcast_item {
+    flex: 1 1 150px;
     background-color: rgba(173, 14, 14, 0.2);
     border-radius: 10px;
-    margin: 0 10px 10px ;
-    padding: 30px 5px 20px;
-    box-sizing: border-box;
-    min-width: 150px;
-    width: 20% ;
-    flex-grow: 1;
-
-    }
-    .weather_forcast-icon{
-    max-width: 50%;
+    padding: 15px;
+    text-align: center;
 }
 
+.weather_forcast_icon {
+    max-width: 60px;
+    margin-bottom: 10px;
+}
+
+.weather_forcast_item .day {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.weather_forcast_item .temp {
+    font-size: 20px;
+}
+
+/* ------------------------
+   Loader (spinner)
+------------------------ */
+.loader {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ------------------------
+   Responsive breakpoints
+------------------------ */
+@media (max-width: 768px) {
+    .weather_today {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .weather_image {
+        width: 30vmin;
+        margin-bottom: 20px;
+    }
+
+    .weather_temparature {
+        font-size: 50px;
+    }
+
+    .weather_forcast {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .weather_forcast_item {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .weather_city {
+        font-size: 28px;
+    }
+
+    .weather_temparature {
+        font-size: 45px;
+    }
+
+    .weather_forcast_item .temp {
+        font-size: 18px;
+    }
+}/*
+@media (max-width: 320px) {
+    .weather_search {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .weather_city {
+        font-size: 24px;
+    }
+
+    .weather_temparature {
+        font-size: 40px;
+    }
+
+    .weather_forcast_item .temp {
+        font-size: 16px;
+    }}
